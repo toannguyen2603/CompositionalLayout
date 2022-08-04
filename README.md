@@ -1,5 +1,14 @@
 # Compositional Layout
 
+*** A layout object that lets you combine items in highly adaptive and flexible visual arrangements. ***
+</br>
+
+## Declaration
+
+```Swift
+@MainActor class UICollectionViewCompositionalLayout : UICollectionViewLayout
+```
+
 ## Overview
 
 ***Compositional layout*** is a type of collection view layout. It's designed to be composable, flexible, and fast, letting you build any kind of visual arrangement for your content by combining — or compositing — each smaller component into a full layout. </br>

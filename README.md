@@ -1,6 +1,6 @@
 # Compositional Layout
 
-*** A layout object that lets you combine items in highly adaptive and flexible visual arrangements. ***
+***A layout object that lets you combine items in highly adaptive and flexible visual arrangements.***
 </br>
 
 ## Declaration

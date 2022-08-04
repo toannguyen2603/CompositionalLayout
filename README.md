@@ -1,6 +1,6 @@
 # Compositional Layout
 
-1. Overview </br>
+## Overview
 
 ***Compositional layout*** is a type of collection view layout. It's designed to be composable, flexible, and fast, letting you build any kind of visual arrangement for your content by combining — or compositing — each smaller component into a full layout. </br>
 

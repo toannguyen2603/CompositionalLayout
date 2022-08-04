@@ -17,9 +17,9 @@ class HeaderSupplementaryView: UICollectionReusableView {
         let label = UILabel()
 //        label.translatesAutoresizingMaskIntoConstraints = false
         label.tintColor = .label
-        label.font = .systemFont(ofSize: 17, weight: .bold)
+        label.font = .systemFont(ofSize: 20, weight: .bold)
         label.textAlignment = .center
-        label.numberOfLines = 1
+        label.numberOfLines = 0
         return label
     }()
     
@@ -37,6 +37,7 @@ class HeaderSupplementaryView: UICollectionReusableView {
     
     func configure() {
         addSubview(titleSection)
+        
 //        titleSection.heightAnchor.constraint(equalToConstant: 100).isActive = true
 //        NSLayoutConstraint.activate([
 //            titleSection.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 10),

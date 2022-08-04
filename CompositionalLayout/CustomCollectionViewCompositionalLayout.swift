@@ -27,7 +27,7 @@ extension ViewController {
         
         let itemSize = NSCollectionLayoutSize(widthDimension: widthItem, heightDimension: heightItem)  
         
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)  
+        let item = NSCollectionLayoutItem(layoutSize: itemSize) 
         
         item.contentInsets = NSDirectionalEdgeInsets(top: top, leading: leading, bottom: bottom, trailing: trailing)
         
@@ -52,8 +52,8 @@ extension ViewController {
 //                }
 //            }
             
-            // Supplementary Item
-            let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+            //MARK: - Supplementary Item
+            let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
             let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
             section.boundarySupplementaryItems = [headerItem]
             
@@ -62,14 +62,11 @@ extension ViewController {
 //            let backgroundInset: CGFloat = 8
 //            backgroundItem.contentInsets = NSDirectionalEdgeInsets(top: backgroundInset, leading: backgroundInset, bottom: backgroundInset, trailing: backgroundInset)
 //            section.decorationItems = [backgroundItem]
-            
-            
+//            
             return section
         }
         
         if let widthVertical = widthVertical , let heightVertical = heightVertical {
-            
-    
             
             let groupVerticalSize = NSCollectionLayoutSize(widthDimension: widthVertical, heightDimension: heightVertical) 
             
@@ -78,7 +75,7 @@ extension ViewController {
             let section = NSCollectionLayoutSection(group: groupVertical)  
             
             // Supplementary Item
-            let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+            let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
             let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
             section.boundarySupplementaryItems = [headerItem]
             
@@ -126,7 +123,7 @@ extension ViewController {
         section.orthogonalScrollingBehavior = .continuous
         
         // Supplementary Item
-        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(100))
+        let headerItemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1), heightDimension: .estimated(50))
         let headerItem = NSCollectionLayoutBoundarySupplementaryItem(layoutSize: headerItemSize, elementKind: "header", alignment: .top)
         section.boundarySupplementaryItems = [headerItem]
         

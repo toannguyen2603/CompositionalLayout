@@ -17,6 +17,7 @@ class ViewController: UIViewController {
         compositionalLayout.register(BackgroundSupplementaryView.self, forDecorationViewOfKind: "background")
 
         let collection = UICollectionView(frame: .zero, collectionViewLayout: compositionalLayout)
+        
         collection.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "cell")
         
         collection.register( HeaderSupplementaryView.self, forSupplementaryViewOfKind: "header", withReuseIdentifier: HeaderSupplementaryView.identifier)
@@ -26,6 +27,7 @@ class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        title = "Compositional Layout Example"
         collectionView.backgroundColor = .systemBackground
         view.addSubview(collectionView)
         collectionView.delegate = self
@@ -45,7 +47,6 @@ class ViewController: UIViewController {
                 
                 return createNestedGround(widthItem: .fractionalWidth(1.0), heightItem: .fractionalHeight(1.0), top: 5, leading: 5, bottom: 5, trailing: 5, widthVertical: .fractionalWidth(1.0), heightVertical: .fractionalHeight(1.0), widthHorizotal: .absolute(220), heightHorizotal: .absolute(300), countVertical: 3, countHorizotal: 1)!
                 
-                
             case 1:
                 
                 return createBasicCompositionLayout(widthItem: .absolute(200), heightItem: .absolute(200), top: 5, leading: 5, bottom: 5, trailing: 5, widthHorizotal: .absolute(100), heightHorizotal: .absolute(200))!
@@ -62,35 +63,10 @@ class ViewController: UIViewController {
                 
             default:
                 
-                    // item
-                let itemSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .absolute(200))  
-                
-                let item = NSCollectionLayoutItem(layoutSize: itemSize)  
-                
-                item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 5)
-                
-                    // group 
-                let groupVeriticalSize = NSCollectionLayoutSize(widthDimension: .absolute(200), heightDimension: .fractionalHeight(1.0)) 
-                
-                let groupVertical = NSCollectionLayoutGroup.vertical(layoutSize: groupVeriticalSize, subitem: item, count: 3)
-                
-                let groupHorizotalSize = NSCollectionLayoutSize(widthDimension: .absolute(210), heightDimension: .absolute(630)) 
-                
-                let groupHorizontal = NSCollectionLayoutGroup.horizontal(layoutSize: groupHorizotalSize, subitem: groupVertical, count: 1)
-                
-                    // section
-                let section = NSCollectionLayoutSection(group: groupHorizontal)    
-                
-                section.orthogonalScrollingBehavior = .groupPaging
-                
-                return section
+                return createNestedGround(widthItem: .fractionalWidth(1.0), heightItem: .fractionalHeight(1.0), top: 5, leading: 5, bottom: 5, trailing: 5, widthVertical: .fractionalWidth(1.0), heightVertical: .fractionalHeight(1.0), widthHorizotal: .absolute(220), heightHorizotal: .absolute(300), countVertical: 3, countHorizotal: 1)!
                 
         }
     }
-    
-    
-    
-    
     
 }
 
@@ -117,17 +93,24 @@ extension ViewController: UICollectionViewDelegate, UICollectionViewDataSource {
         
         switch indexPath.section {
             case 0:
-                cell.backgroundColor = .systemMint
+                cell.backgroundColor = .systemPurple
+                // create radius for item
+                cell.layer.cornerRadius = 8
             case 1: 
                 cell.backgroundColor = .systemRed
+                cell.layer.cornerRadius = 8
             case 2: 
-                cell.backgroundColor = .systemFill
+                cell.backgroundColor = .systemTeal
+                cell.layer.cornerRadius = 8
             case 3:
                 cell.backgroundColor = .systemBlue
+                cell.layer.cornerRadius = 8
             case 4:
                 cell.backgroundColor = .systemPink
+                cell.layer.cornerRadius = 8
             default: 
                 cell.backgroundColor = .systemFill
+                cell.layer.cornerRadius = 8
         }
         return cell 
     }
